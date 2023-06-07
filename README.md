@@ -47,6 +47,7 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
+
 /* write all the steps invloved */
 
 
@@ -54,16 +55,30 @@ If the control input changes to AB = 10, then all the gates are restricted excep
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: S.Karthikeyan
+RegisterNumber:  212222050029
 */
-
-
-
+```
+### PROGRAM MULTIPLEXER
+```
+module ex07(i0,i1,i2,i3,s0,s1,y);
+input i0,i1,i2,i3,s0,s1;
+output y;
+wire p,q,r,s,s0c,s1c;
+not(s0c,s0);
+nor(s1c,s1);
+and(p,s0c,s1c,i0);
+and(q,s0c,s1c,i2);
+and(r,s0,s1c,i2);
+and(s,s0,s1,i3);
+or(y,p,q,r,s);
+endmodule
+```
 
 
 
 ### RTL LOGIC  
+![244143308-e77ee084-053c-4712-9699-e67265697306](https://github.com/Karthi2603/Exercise-07-Multiplexer-and-De-multiplexer/assets/130553768/6d7f07cf-f51f-458a-a107-5fbe8d8838c7)
 
 
 
@@ -73,16 +88,42 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+![244143985-3b0ac6ff-3f30-470a-8f46-157aea5dc635](https://github.com/Karthi2603/Exercise-07-Multiplexer-and-De-multiplexer/assets/130553768/a43d795f-00cc-4523-a2db-468d40c1f149)
+
+### TRUTH TABLE
+<img width="235" alt="244143767-25936689-bbe3-45d5-9299-1c95cdfc4084" src="https://github.com/Karthi2603/Exercise-07-Multiplexer-and-De-multiplexer/assets/130553768/5eb0c509-9ff7-4b12-9e18-ef2adff1059e">
 
 
+### PROGRAM DE-MULTIPLEXER
+```
+module demux(Y0,Y1,Y2,Y3,S0,S1,I);
+input I,S0,S1;
+output Y0,Y1,Y2,Y3;
+wire S0c,S1c;
+not(S0c,S0);
+nor(S1c,S1);
+and (Y0,I,S0c,S1c);
+and(Y1,I,S0c,S1);
+and(Y2,I,S0,S1c);
+and(Y3,I,S0,S1);
+endmodule
+```
+### RLT LOGIC
+
+![244144847-c124ea71-269b-44ae-9c43-19efa564d2cc](https://github.com/Karthi2603/Exercise-07-Multiplexer-and-De-multiplexer/assets/130553768/4d093b48-0198-4f0d-b035-db8d8eafc51d)
+
+### TIMING DIAGRAM
+![244144958-4e3fb2db-64bf-4e67-ad93-dd39adcb33ea](https://github.com/Karthi2603/Exercise-07-Multiplexer-and-De-multiplexer/assets/130553768/3e050fc5-87df-4103-aab8-8e6ae01c5856)
 
 
 
 ### TRUTH TABLE 
 
+<img width="614" alt="244145029-849ef8ff-a49e-4f6a-b204-6c165998cf11" src="https://github.com/Karthi2603/Exercise-07-Multiplexer-and-De-multiplexer/assets/130553768/89eb5b6c-b838-4985-8166-c1b05a08f0f4">
 
 
 
 
 
 ### RESULTS 
+multiplexer and de-multiplexer are verified.
